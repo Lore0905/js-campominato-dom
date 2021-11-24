@@ -1,18 +1,4 @@
-// creo le bombe --> arrey di 16 numeri casuali
-    // - non ci possono essere doppioni  if( !numbersArray.includes() ) {}
 
-// se l'utente clicca sulla bomba la cella diventa rossa (aggiunge la classe '.lose') 
-
-// raggiunge il numero massimo possibile di numeri consentiti.
-
-    // - e la partita termina 
-    //     -- non può più cliccare su nessuna cella 
-    //     --- compare la scritta sotto communicando all'utente:
-    //         ---- che ha perso 
-    //         ---- il numero di volte che l'utente a cliccato su una cella che non era una bomba
-// 
-            
-////////////////////////////////////////////////////////////////////////////////////////
 
 // seleziono il pulsante play
 const playButton = document.getElementById('play');
@@ -30,9 +16,7 @@ function startGame(){
     maingrid.classList.remove('hidden');
     maingrid.innerHTML = '';
 
-    // BOMBE
-    // creo l'arrey di 16 numeri casuali
-    const randomNumber = 16;
+    
 
     // memorizzo i dati nella select 
     const selectValue = document.getElementById('select-level').value;
@@ -50,7 +34,9 @@ function startGame(){
         customClass = 'd-easy';
         totalSquareNumber = 100;
     }
+    //////////////////////////////////////////////
 
+    ////////////////////////////////////////
     // creo le celle in base alla difficoltà sceltà dall'utente
     for( let i = 1; i <= totalSquareNumber; i++){
         totalSquare = createSquare(i, customClass);
@@ -63,7 +49,12 @@ function squareClick (){
     // quando clicco su quel tasto deve aggiungersi la classe click (che imposta il backgrouns blue)
     this.classList.add('click');
 }
+////////////////////////////////////////////////////////////////////////////////
 
+
+const boombsArrey = [];
+
+////////////////////////////////////////////////////////////////////////////////
 // creo la funzione che mi permette di creare le celle in base alla difficoltà
 function createSquare (singleNumber, customClass){
 
@@ -75,6 +66,59 @@ function createSquare (singleNumber, customClass){
 
     return newBox;
 }
+//////////////////////////////////////////////////////////////////////////////
+
+// FUNZIONE 
+// creo le bombe --> arrey di 16 numeri casuali
+    // - non ci possono essere doppioni  if( !numbersArray.includes() ) {}
+// END FUNZIONE
+
+// se l'utente clicca sulla bomba la cella diventa rossa (aggiunge la classe '.lose') 
+
+// raggiunge il numero massimo possibile di numeri consentiti.
+
+    // - e la partita termina 
+    //     -- non può più cliccare su nessuna cella 
+    //     --- compare la scritta sotto communicando all'utente:
+    //         ---- che ha perso 
+    //         ---- il numero di volte che l'utente a cliccato su una cella che non era una bomba
+// 
+            
+
+
+// BOMBE
+
+// maxRangeNumber --> range di numeri in cui vengono generate le bombe
+// numberOfBoom --> il numero di bombe che devono essere create
+
+// creo una funzione 
+
+function boombsGenerate(maxRangeNumber, numberOfBoom){
+
+    // fino a che l'arrey non ha il nuomero di elementi di numberOfBoom 
+    // continua a generare numeri random 
+
+    const arreyBoomPosition = [];
+
+    while( arreyBoomPosition.lenght < numberOfBoom ) {
+        const randomNumber = getRndInteger(1, maxRangeNumber);
+
+        if(!arreyBoomPosition.includes(randomNumber)) {
+            arreyBoomPosition.push(randomNumber);
+        }
+
+    }
+    return arreyBoomPosition;
+
+}
+let prova = boombsGenerate(100, 16);
+console.log(prova);
+
+// w3 shool random number function
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
 
 
 
