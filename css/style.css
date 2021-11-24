@@ -1,0 +1,106 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+/* COMMONS */
+.app-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+/* END COMMONS */
+
+/* HEADER */
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.logo > img{
+    height: 65px;
+}
+.title{
+    flex-grow: 1;
+}
+select{
+    width: 150px;
+    background-color: #e9e9ed;
+}
+.button{
+    margin-left: 5px;
+    margin-right: 20px;
+}
+#play{
+    padding: 0px 30px;
+}
+/* END HEADER */
+
+/* MAIN */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 140px);
+    background-color: #7fffd4;
+}
+
+/* grid */
+.game-grid{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+/* SQUARE */
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #7fffd4;
+    color:white;
+}
+.square.d-easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+.square.d-medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.square.d-difficult{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+.square.active{
+    background-color: #6495ed;
+}
+
+/* END MAIN */
+
+/* FOOTER */
+footer{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+footer > div{
+    margin: 0px 20px;
+}
+
+/* END FOOTER */
+
+/* commons */
+.hidden{
+    display: none;
+}
+.click{
+    background-color: #6495ed;
+}

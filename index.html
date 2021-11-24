@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>js-campominato-grid</title>
+</head>
+<body>
+    
+    <div class="app-wrapper">
+
+        <!-- HEADER -->
+        <header>
+            <!-- logo -->
+            <div class="logo">
+                <img src="https://yt3.ggpht.com/ytc/AKedOLTO2XVhtyMr24Dnz6QJ-Lsj_05XHim-qMoF6PRc=s900-c-k-c0x00ffffff-no-rj" alt="">
+            </div>
+            <!-- titolo -->
+            <div class="title">
+                <h1>Campo Minato: la Griglia</h1>
+            </div>
+            <!-- select -->
+            <div>
+                <label for="select-level">difficoltà:</label>  
+            </div>
+            <select name="difficolta" id="select-level">
+                <option value="d-1">Easy</option>
+                <option value="d-2">Medium</option>
+                <option value="d-3">difficult</option>
+            </select>
+            <!-- button difficoltà -->
+            <div class="button">
+                <button>
+                    <a id="play">play</a>
+                </button>
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- MAIN -->
+        <main>
+            <!-- title main -->
+            <div>
+                <h2 id="text-main">Seleziona il livello di difficoltà della griglia</h2>
+            </div>
+            <!-- end title main -->
+            <div id="grid" class="game-grid hidden">
+
+                <!-- single square
+                <div class="square">
+                    <span>1</span>
+                </div> -->
+               
+            </div>
+        </main>
+        <!-- END MAIN -->
+
+        <!-- FOOTER -->
+        <footer>
+            <div>
+                <span>Made with &hearts; By</span>
+                <span><a href="#">Boolean</a></span>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
