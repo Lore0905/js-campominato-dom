@@ -92,6 +92,8 @@ function createSquare (singleNumber, customClass){
 // numberOfBoom --> il numero di bombe che devono essere create
 
 // creo una funzione 
+let prova = boombsGenerate(100, 16);
+console.log(prova);
 
 function boombsGenerate(maxRangeNumber, numberOfBoom){
 
@@ -102,7 +104,7 @@ function boombsGenerate(maxRangeNumber, numberOfBoom){
 
     while( arreyBoomPosition.lenght < numberOfBoom ) {
         const randomNumber = getRndInteger(1, maxRangeNumber);
-
+        
         if(!arreyBoomPosition.includes(randomNumber)) {
             arreyBoomPosition.push(randomNumber);
         }
@@ -111,8 +113,7 @@ function boombsGenerate(maxRangeNumber, numberOfBoom){
     return arreyBoomPosition;
 
 }
-let prova = boombsGenerate(100, 16);
-console.log(prova);
+
 
 // w3 shool random number function
 function getRndInteger(min, max) {
