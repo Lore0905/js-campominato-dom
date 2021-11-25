@@ -102,7 +102,7 @@ function boombsGenerate(maxRangeNumber, numberOfBoom){
 
     const arreyBoomPosition = [];
 
-    while( arreyBoomPosition.lenght < numberOfBoom ) {
+    while( arreyBoomPosition.length < numberOfBoom ) {
         const randomNumber = getRndInteger(1, maxRangeNumber);
         
         if(!arreyBoomPosition.includes(randomNumber)) {
