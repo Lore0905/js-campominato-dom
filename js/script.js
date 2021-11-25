@@ -34,9 +34,44 @@ function startGame(){
         customClass = 'd-easy';
         totalSquareNumber = 100;
     }
-    //////////////////////////////////////////////
 
-    ////////////////////////////////////////
+    // numero di bombe che sono
+    const numberOfBoom = 16;
+
+    const totalBombs = boombsGenerate(totalSquareNumber, numberOfBoom);
+    console.log(totalBombs);
+
+    // calcolo il numero massimo di tentantivi che può fare l'utente
+    const maxAttempts = totalSquareNumber - totalBombs.length;
+    console.log('maxAttemps' + maxAttempts);
+
+    // creo un arrey vuoto che rappresenta il numero di tentativi che ha fatto l'uttente prima di prendere una bomba
+    const attempsDone = [];
+
+    // BOMBE
+
+    // maxRangeNumber --> range di numeri in cui vengono generate le bombe
+    // numberOfBoom --> il numero di bombe che devono essere create
+
+    function boombsGenerate(maxRangeNumber, numberOfBoom){
+
+        // fino a che l'arrey non ha il nuomero di elementi di numberOfBoom 
+        // continua a generare numeri random 
+    
+        const arreyBoomPosition = [];
+    
+        while( arreyBoomPosition.length < numberOfBoom ) {
+            const randomNumber = getRndInteger(1, maxRangeNumber);
+            
+            if(!arreyBoomPosition.includes(randomNumber)) {
+                arreyBoomPosition.push(randomNumber);
+            }
+    
+        }
+        return arreyBoomPosition;
+    
+    }
+
     // creo le celle in base alla difficoltà sceltà dall'utente
     for( let i = 1; i <= totalSquareNumber; i++){
         totalSquare = createSquare(i, customClass);
@@ -49,12 +84,7 @@ function squareClick (){
     // quando clicco su quel tasto deve aggiungersi la classe click (che imposta il backgrouns blue)
     this.classList.add('click');
 }
-////////////////////////////////////////////////////////////////////////////////
 
-
-const boombsArrey = [];
-
-////////////////////////////////////////////////////////////////////////////////
 // creo la funzione che mi permette di creare le celle in base alla difficoltà
 function createSquare (singleNumber, customClass){
 
@@ -86,31 +116,24 @@ function createSquare (singleNumber, customClass){
             
 
 
-// BOMBE
 
-// maxRangeNumber --> range di numeri in cui vengono generate le bombe
-// numberOfBoom --> il numero di bombe che devono essere create
 
 // creo una funzione 
-let prova = boombsGenerate(100, 16);
-console.log(prova);
 
-function boombsGenerate(maxRangeNumber, numberOfBoom){
+function cellClick (){
+    const clicknumber = parseInt( this.querySelector('span').textContent );
+}
+console.log(cellClick);
+function endGame (winOrLose) {
 
-    // fino a che l'arrey non ha il nuomero di elementi di numberOfBoom 
-    // continua a generare numeri random 
+    let finalmex;
 
-    const arreyBoomPosition = [];
-
-    while( arreyBoomPosition.length < numberOfBoom ) {
-        const randomNumber = getRndInteger(1, maxRangeNumber);
-        
-        if(!arreyBoomPosition.includes(randomNumber)) {
-            arreyBoomPosition.push(randomNumber);
-        }
-
+    if(winOrLose === 'win'){
+        finalmex = 'hai vinto';
     }
-    return arreyBoomPosition;
+    else{  
+        finalmex = 'hai perso';
+    }
 
 }
 
